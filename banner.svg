@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="100%">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="0.5" stop-color="#1a1040"/>
+      <stop offset="1" stop-color="#05283a"/>
+      <animate attributeName="x1" values="0;1;0" dur="12s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00f7ff"><animate attributeName="stop-color" values="#00f7ff;#8957e5;#ff3cac;#00f7ff" dur="6s" repeatCount="indefinite"/></stop>
+      <stop offset="1" stop-color="#8957e5"><animate attributeName="stop-color" values="#8957e5;#ff3cac;#00f7ff;#8957e5" dur="6s" repeatCount="indefinite"/></stop>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="type"><rect x="130" y="205" width="0" height="40">
+      <animate attributeName="width" values="0;740;740;0" keyTimes="0;0.55;0.9;1" dur="6s" repeatCount="indefinite"/>
+    </rect></clipPath>
+  </defs>
+
+  <rect width="1000" height="300" fill="url(#bg)"/>
+
+  <!-- twinkling stars -->
+  <g fill="#fff">
+    <circle cx="80" cy="50" r="2"><animate attributeName="opacity" values="0.1;1;0.1" dur="2.1s" repeatCount="indefinite"/></circle>
+    <circle cx="190" cy="230" r="1.5"><animate attributeName="opacity" values="1;0.1;1" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="320" cy="40" r="2"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="470" cy="270" r="1.5"><animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite"/></circle>
+    <circle cx="610" cy="35" r="2"><animate attributeName="opacity" values="0.1;1;0.1" dur="3.4s" repeatCount="indefinite"/></circle>
+    <circle cx="740" cy="250" r="2"><animate attributeName="opacity" values="1;0.1;1" dur="2.3s" repeatCount="indefinite"/></circle>
+    <circle cx="860" cy="60" r="1.5"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.9s" repeatCount="indefinite"/></circle>
+    <circle cx="940" cy="190" r="2"><animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- floating orbs -->
+  <circle cx="120" cy="150" r="40" fill="#00f7ff" opacity="0.12">
+    <animate attributeName="cy" values="150;110;150" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="40;55;40" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="880" cy="140" r="50" fill="#ff3cac" opacity="0.12">
+    <animate attributeName="cy" values="140;185;140" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="50;35;50" dur="9s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- waves -->
+  <path fill="#8957e5" opacity="0.25">
+    <animate attributeName="d" dur="8s" repeatCount="indefinite"
+      values="M0,270 C250,230 450,300 700,260 S900,240 1000,265 V300 H0Z;
+              M0,260 C250,300 450,230 700,275 S900,290 1000,255 V300 H0Z;
+              M0,270 C250,230 450,300 700,260 S900,240 1000,265 V300 H0Z"/>
+  </path>
+  <path fill="#00f7ff" opacity="0.18">
+    <animate attributeName="d" dur="11s" repeatCount="indefinite"
+      values="M0,280 C200,255 500,295 750,270 S920,280 1000,272 V300 H0Z;
+              M0,272 C200,295 500,258 750,285 S920,262 1000,282 V300 H0Z;
+              M0,280 C200,255 500,295 750,270 S920,280 1000,272 V300 H0Z"/>
+  </path>
+
+  <!-- title: draws itself, then fills -->
+  <text x="500" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="86"
+        fill="none" stroke="url(#neon)" stroke-width="2" stroke-dasharray="3000" filter="url(#glow)">
+    ABHINAV KOLA
+    <animate attributeName="stroke-dashoffset" values="3000;0;0;3000" keyTimes="0;0.4;0.9;1" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="none;none;url(#neon);url(#neon);none" keyTimes="0;0.4;0.55;0.9;1" dur="6s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- typed subtitle -->
+  <g clip-path="url(#type)">
+    <text x="500" y="232" text-anchor="middle" font-family="Courier New, monospace" font-size="24" fill="#00f7ff">&gt; AI/ML Engineer | Python Developer | GenAI Builder_</text>
+  </g>
+</svg>
